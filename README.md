@@ -14,10 +14,11 @@ Angular group 8
     <header>
       <h1 class="text-center">Flatlander Crafted Gems CHANGE SOMETHING</h1>
       <h2 class="text-center">– an Angular store –</h2>
-      <p>TEST!</p>
+      <p>En lille ændring</p>
     </header>
 
-    <!--  Products Container  -->
+    <!-- Products Container --> 
+
     <div class="list-group">
       <!--  Product Container  -->
       <div class="list-group-item" ng-repeat="product in store.products">
