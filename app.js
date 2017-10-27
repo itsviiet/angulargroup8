@@ -8,7 +8,7 @@
     });
     var basket =
         {
-        heading:'Lokale',
+        name:'Lokale',
         number: 12,
         description: '. . . '
         }
