@@ -2,29 +2,31 @@
 <html lang="da">
 <head ng-app="booking">
     <meta charset="UTF-8">
-    <title>Book lokale på EAL</title>
+    <title>Basket i Odense</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Stylesheet, style.css --> 
     <link rel="stylesheet" href="style.css">
-
 </head>
+
 <body ng-controller="BookController as booking">
 
     <section class="container">
         <section class="row">
             <section class="col-md-12">
 
-                <h1>Book lokale</h1>
-                <p>hej</p>
-                <p>
-                  hej2
-                </p>
-                <p>Hej3</p>
+                <h1>Basketbaner i Odense</h1>
+                
+                <iframe width="700" height="400" src="https://portal.opendata.dk/dataset/basketbaner/resource/d26e1795-4e52-4358-83b5-7cc1738610d2/view/eb4213ae-0b42-4653-af1d-ccbe0357346b" frameBorder="0"></iframe>
+                
             </section>
         </section>
     </section>
 
     <!-- link til app.js -->
     <script type="text/javascript" src="app.js"></script>
+
     <!-- Angular JS CDN -->
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 
