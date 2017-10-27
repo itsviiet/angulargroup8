@@ -6,10 +6,13 @@
        
         
     });
-    var basket = {
-        name:'Lokale',
+    var basket =
+        {
+        heading:'Lokale',
         number: 12,
         description: '. . . '
-    }
+        }
+       
+        
 })();
 
