@@ -24,16 +24,16 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Kort <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#heading1">Kort <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Tilbehør &amp; udstyr</a>
+                <a class="nav-link" href="#heading2">Tilbehør &amp; udstyr</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Anmeld banerne</a>
+                <a class="nav-link" href="#heading3">Anmeld banerne</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Se anmeldelser</a>
+                <a class="nav-link" href="#heading4">Se anmeldelser</a>
               </li>
             </ul>
           </div>
@@ -45,13 +45,15 @@
                    
                     <div ng-controller="BasketController as basket" id="basketbaner">
                       
-                        <h1>Basketbaner i Odense</h1>
+                        <h1 id="heading1">Basketbaner i Odense</h1>
                 
                         <iframe class="embed-responsive" height="500"  src="https://portal.opendata.dk/dataset/basketbaner/resource/d26e1795-4e52-4358-83b5-7cc1738610d2/view/eb4213ae-0b42-4653-af1d-ccbe0357346b" frameborder="0"></iframe>
                 
                         <p>{{basket.product.heading}}</p> 
                         
-                        
+                        <h1 id="heading2">Tilbehør &amp; udstyr</h1>
+                        <h1 id="heading3">Anmeld banerne</h1>
+                        <h1 id="heading3">Se anmeldelser</h1>
                         
                     </div>
                     
