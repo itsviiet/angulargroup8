@@ -1,5 +1,9 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    height: 1000px;
+    height: 100%;
+}
+
+#basketbaner {
+    margin-top: 6%;
 }

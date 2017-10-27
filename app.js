@@ -1,14 +1,14 @@
 (function(){
-    var app = angular.module('booking', []);
+    var app = angular.module('basketball', []);
     
-    app.controller( 'BookController', function(){
-        this.product = lokale;
+    app.controller('BasketController', function(){
+        this.product = basket;
        
         
     });
-    var lokale = {
-        name:'Lokale'
-        number: A1 12,
+    var basket = {
+        name:'Lokale',
+        number: 12,
         description: '. . . '
     }
 })();
