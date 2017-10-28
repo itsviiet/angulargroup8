@@ -8,7 +8,7 @@
     });
     var basket =
         {
-        name:'Lokale',
+        place:'Havnen',
         number: 12,
         description: '. . . '
         }
