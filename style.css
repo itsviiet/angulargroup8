@@ -1,4 +1,10 @@
 body {
-    margin: 0;
+  max-width: 600px;
+    margin: 0 auto;
     font-family: sans-serif;
+    background-color: rgb(236, 247, 240);
+    font-family: 'Raleway', sans-serif;
+}
+section {
+  margin-top: 30px;
 }

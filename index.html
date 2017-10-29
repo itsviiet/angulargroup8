@@ -1,37 +1,102 @@
 <!DOCTYPE html>
 <html lang="da">
-<head ng-app="booking">
+<head ng-app="basketBaner">
     <meta charset="UTF-8">
     <title>Book lokale på EAL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--- bootstrap css --->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!--- style css --->
     <link rel="stylesheet" href="style.css">
+    <!--- font --->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
 
 </head>
-<body>
+<body ng-controller="BasketController as basket">
 
-    <section class="container">
-        <section class="row">
-            <section class="col-md-12">
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <a class="navbar-brand" href="#">Basket i Odense</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-                <h1>Book lokale</h1>
-                <p>hej</p>
-                <p>
-                  hej2
-                </p>
-                <p>Hej3</p>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Kort <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#heading2">Anmeld banerne</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#heading3">Se anmeldelser</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+       <section class="container">
+            <section class="row">
+                <section class="col-md-12">
+                    <div ng-controller="BasketController as basket">
+
+                        <h1>Basketbaner i Odense</h1>
+
+                        <iframe class="embed-responsive" height="500"  src="https://portal.opendata.dk/dataset/basketbaner/resource/d26e1795-4e52-4358-83b5-7cc1738610d2/view/eb4213ae-0b42-4653-af1d-ccbe0357346b" frameborder="0"></iframe>
+
+                        <p>{{basket.product.place}}</p>
+                        <p>{{basket.product.number}}</p>
+                        <p>{{basket.product.description}}</p>
+
+                        <div>
+                          <h1>Anmeld banerne</h1>
+                          <form name="reviewForm" role="form" ng-controller="ReviewController as reviews" ng-submit="reviews.addReview(product)">
+                            <!--  Live Preview -->
+                            <blockquote ng-show="reviews.review.stars">
+                              <strong>{{reviews.review.stars}} Stars</strong>
+                              {{reviews.review.body}}
+                              <cite class="clearfix">—{{reviews.review.author}}</cite>
+                            </blockquote>
+                            <fieldset class="form-group">
+                              <select ng-model="reviews.review.field" class="form-control" title="field">
+                                <option value="">Vælg bane</option>
+                                <option value="">Havnen</option>
+                                <option value="">Random</option>
+                                <option value="">Forrest</option>
+                              </select>
+                            </fieldset>
+                            <fieldset class="form-group">
+                              <select ng-model="reviews.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+                                <option value="">Stjerner</option>
+                              </select>
+                            </fieldset>
+                            <fieldset class="form-group">
+                              <textarea ng-model="reviews.review.body" class="form-control" placeholder="Write a short review of the product..." rows="3" title="Review"></textarea>
+                            </fieldset>
+                            <fieldset class="form-group">
+                              <input ng-model="reviews.review.author" type="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" />
+                            </fieldset>
+                            <fieldset class="form-group">
+                              <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+                            </fieldset>
+                          </form>
+                        </div>
+                        <h1>Se anmeldelser</h1>
+                    </div>
+                </section>
             </section>
         </section>
-    </section>
 
-
-
-    <!-- link til app.js -->
+        <footer>
+          <!--- ?skal der være en footer til application? --->
+        </footer>
+    <!-- app.js -->
     <script type="text/javascript" src="app.js"></script>
     <!-- Angular JS CDN -->
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <!-- Bootstrap CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
 </body>
 </html>
