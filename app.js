@@ -1,5 +1,6 @@
 (function(){
     var app = angular.module('basketball', []);
+<<<<<<< HEAD
 
     app.controller('BasketController', function(){
         this.product = basket;
@@ -50,3 +51,21 @@
       }]
     }];
 })();
+=======
+    
+    app.controller('BasketController', function(){
+        this.product = basket;
+       
+        
+    });
+    var basket =
+        {
+        place:'Havnen',
+        number: 12,
+        description: '. . . '
+        }
+       
+        
+})();
+
+>>>>>>> d441c6306599b836a2fbfe068888d3256a60c8fc

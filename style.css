@@ -2,9 +2,17 @@ body {
   max-width: 600px;
     margin: 0 auto;
     font-family: sans-serif;
+<<<<<<< HEAD
     background-color: rgb(236, 247, 240);
     font-family: 'Raleway', sans-serif;
 }
 section {
   margin-top: 30px;
+=======
+    height: 1500px;
+}
+
+#heading1 {
+    margin-top: 6%;
+>>>>>>> d441c6306599b836a2fbfe068888d3256a60c8fc
 }
