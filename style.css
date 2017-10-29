@@ -11,31 +11,37 @@ main {
 }
 
 section {
-    margin-top: 30px;
     height: 1500px;
+}
+
+.heading {
+    margin-top: 50px;
 }
 
 /* Styling af navigation */
 
 nav {
-	background-color: black;
-	padding: 15px 15px 5px 40px;
+	background-color: darkslategrey;
+	padding: 20px 50px 5px 50px;
 	color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
 }
 
 nav a {
 	color: #fff;
 	text-decoration: none;
 	display: block;
-	margin: o 35px 0 0;
-	padding: 10px 0;
+	padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid darkslategrey;
 }
 
 nav label {
     display: block;
     background: url(images/menu.svg) no-repeat 0 1px; 
-    background-size: 20px auto; 
-    padding: 0 0 10px 30px; 
+    background-size: 40px auto; 
+    padding: 0 0 10px 50px; 
 }
 
 nav label div {
@@ -49,6 +55,13 @@ nav label input {
 
 nav label input:checked ~ div {
     display: block;
+}
+
+nav label div a:hover {
+    color: white;
+    text-decoration: none; 
+    border-bottom: 1px solid white;
+        
 }
 
 /* Stop: styling af navigation */
