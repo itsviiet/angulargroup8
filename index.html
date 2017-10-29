@@ -24,7 +24,7 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Kort <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#heading1">Kort <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#heading2">Anmeld banerne</a>
@@ -40,53 +40,66 @@
             <section class="row">
                 <section class="col-md-12">
 
-                        <h1>Basketbaner i Odense</h1>
+                        <h1 id="heading1">Basketbaner i Odense</h1>
 
                         <iframe class="embed-responsive" height="500"  src="https://portal.opendata.dk/dataset/basketbaner/resource/d26e1795-4e52-4358-83b5-7cc1738610d2/view/eb4213ae-0b42-4653-af1d-ccbe0357346b" frameborder="0"></iframe>
 
-                        <p>{{basket.product.place}}</p>
-                        <p>{{basket.product.number}}</p>
-                        <p>{{basket.product.description}}</p>
-
                         <div>
-                          <h1>Anmeld banerne</h1>
-                          <form name="reviewForm" role="form" ng-controller="ReviewController as reviews" ng-submit="reviews.addReview(product)">
+                          <h1 id="heading2">Anmeld banerne</h1>
+
+                          <form name="reviewForm" role="form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+
                             <!--  Live Preview -->
-                            <blockquote ng-show="reviews.review.stars">
-                              <strong>{{reviews.review.stars}} Stars</strong>
-                              {{reviews.review.body}}
-                              <cite class="clearfix">—{{reviews.review.author}}</cite>
+<!-- ÆNDRE stars til field når ng-option er fikset -->
+                            <blockquote ng-show="reviewCtrl.review.stars">
+                            {{reviewCtrl.review.field}}
+                            
+                              <strong>{{reviewCtrl.review.stars}} Stars</strong>
+
+                              {{reviewCtrl.review.body}}
+
+                              <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
                             </blockquote>
+ <!-- LAV NG-OPTIONS SÅ KUN PLACE KOMMER FREM I DET -->
                             <fieldset class="form-group">
-                              <select ng-model="reviews.review.field" class="form-control" title="field">
+                              <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="basket.place for basket in basket" title="field">
                                 <option value="">Vælg bane</option>
-                                <option value="">Havnen</option>
-                                <option value="">Random</option>
-                                <option value="">Forrest</option>
                               </select>
                             </fieldset>
+                            
                             <fieldset class="form-group">
-                              <select ng-model="reviews.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+                              <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
                                 <option value="">Stjerner</option>
                               </select>
                             </fieldset>
+                            
                             <fieldset class="form-group">
-                              <textarea ng-model="reviews.review.body" class="form-control" placeholder="Write a short review of the product..." rows="3" title="Review"></textarea>
+                              <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Skriv en kort beskrivelse af din oplevelse" rows="3" title="Review" required></textarea>
                             </fieldset>
+                            
                             <fieldset class="form-group">
-                              <input ng-model="reviews.review.author" type="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" />
+                              <input ng-model="reviewCtrl.review.author" type="email" class="form-control" class="ng-pristine ng-invalid" placeholder="randomEmail@gmail.com" title="Email" required/>
                             </fieldset>
+                            
+                            
                             <fieldset class="form-group">
                               <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
                             </fieldset>
                           </form>
                         </div>
-                        <h1>Se anmeldelser</h1>
+
+                        <h1 id="heading3">Se anmeldelser</h1>
+                        
+                        <blockquote ng-repeat="review in product.reviews">
+                            <b>Stars: {{reviewCtrl.review.stars}}</b>
+                            {{reviewCtrl.review.body}}
+                            <cite>By: {{reviewtrl.review.author}}</cite>
+                        </blockquote>
                     
                 </section>
             </section>
         </section>
-
+   
     </main>
     
     <!-- Angular JS CDN -->
