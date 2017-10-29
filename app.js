@@ -2,7 +2,7 @@
     var app = angular.module('basketball', []);
 
     app.controller('BasketController', function(){
-        this.product = basket;
+        this.products = basket;
     });
 
     app.controller("ReviewController", function(){
