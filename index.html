@@ -57,17 +57,17 @@
                         </blockquote>
 
                             <!--  Live Preview -->
-<!-- ÆNDRE stars til field når ng-option er fikset -->
+
                             <blockquote ng-show="reviewCtrl.review.field">
                             {{reviewCtrl.review.field}}
-                            
+                                <br>
                               <strong>{{reviewCtrl.review.stars}} Stars</strong>
-
+                                <br>
                               {{reviewCtrl.review.body}}
-
+                                <br>
                               <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
                             </blockquote>
- <!-- LAV NG-OPTIONS SÅ KUN PLACE KOMMER FREM I DET -->
+
                             <fieldset class="form-group">
                               <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="places for places in ['Havnepladsen', 'Nonnebakken Multibane', 'Dronningensgade', 'Idrætslegepladsen i Vollmose', 'Willeruplundparken', 'Børnenes Jord Multibane', 'Motionsplads Elisevej', 'Villestoftengen Multibane', 'Korup Klubben', 'Godthåbsgade']" title="place">
                                 <option value="">Vælg bane</option>
