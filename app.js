@@ -16,7 +16,21 @@
         this.review = {};
       };
     });
-
+    
+    app.controller("ButtonController", function(){
+        this.button = 1;
+        console.log(button);
+        
+        this.selectButton = function(setButton){
+          this.button = setButton;  
+        };
+        this.isSelected = function(checkButton){
+          return this.tab === checkButton;  
+            
+        };
+    });
+    
+    
     var basket = [{
         id: "1",
         place:'Havnepladsen',

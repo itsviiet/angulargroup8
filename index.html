@@ -61,7 +61,7 @@
                             <blockquote ng-show="reviewCtrl.review.field">
                             {{reviewCtrl.review.field}}
                                 <br>
-                              <strong>{{reviewCtrl.review.stars}} Stars</strong>
+                              <strong>{{reviewCtrl.review.stars}} Stjerner</strong>
                                 <br>
                               {{reviewCtrl.review.body}}
                                 <br>
@@ -86,7 +86,7 @@
                             </fieldset>
                             
                             <fieldset class="form-group">
-                              <input ng-model="reviewCtrl.review.author" type="email" class="form-control" class="ng-pristine ng-invalid" placeholder="randomEmail@gmail.com" title="Email" required/>
+                              <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" required/>
                             </fieldset>
                             
                             
@@ -108,39 +108,57 @@
                         </blockquote> -->
                         
                         
-                    
+                    <!--
                         <div >
                             <button ng-repeat="product in basket.products">{{product.place}}</button>
                             
                         </div>
+                    --> 
                         
-                        <section>
+                        <section ng-controller="ButtonController as btn">
                             
-                            <ul>
-                                   
-                                   <li><a href ng-click="button = 1">Havnepladsen</a></li>
-                                   <li><a href ng-click="button = 2">Havnepladsen</a></li>
-                                   <li><a href ng-click="button = 3">Havnepladsen</a></li>
-                                   <li><a href ng-click="button = 4">Havnepladsen</a></li>
-                                   <li><a href ng-click="button = 5">Havnepladsen</a></li>
-                                   <li><a href ng-click="button = 6">Havnepladsen</a></li>
-                                   <li><a href ng-click="button = 7">Havnepladsen</a></li>
-                                   <li><a href ng-click="button = 8">Havnepladsen</a></li>
-                                   <li><a href ng-click="button = 9">Havnepladsen</a></li>
-                                   <li><a href ng-click="button = 10">Havnepladsen</a></li>
+                            <ul class="nav nav-pills flex-column">
+                                   <li class="nav-item" ng-class="{ active:btn.isSelected(1)}">
+                                       <a class="nav-link" href ng-click="btn.selectButton(1)">Havnepladsen</a>
+                                    </li>
+                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(2)}">
+                                       <a class="nav-link" href ng-click="btn.selectButton(2)">Nonnebakken Multibane</a>
+                                    </li>
+                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(3)}">
+                                       <a class="nav-link" href ng-click="btn.selectButton(3)">Dronningensgade</a>
+                                    </li>
+                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(4)}">
+                                       <a class="nav-link" href ng-click="btn.selectButton(4)">Idrætspladsen i Vollsmose</a>
+                                    </li>
+                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(5)}">
+                                       <a class="nav-link" href ng-click="btn.selectButton(5)">Willeruplundparken</a>
+                                    </li>
+                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(6)}">
+                                       <a class="nav-link" href ng-click="btn.selectButton(6)">Børnenes Jord Multibane</a>
+                                    </li>
+                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(7)}">
+                                       <a class="nav-link " href ng-click="bbtn.selectButton(7)">Motionsplads Elisevej</a>
+                                    </li>
+                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(7)}">
+                                       <a class="nav-link" href ng-click="btn.selectButton(8)">Villestoftengen Multibane</a>
+                                    </li>
+                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(9)}">
+                                       <a class="nav-link " href ng-click="bbtn.selectButton(9)">Korup Klubben</a>
+                                    </li>
+                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(10)}">
+                                       <a class="nav-link " href ng-click="btn.selectButton(10)">Godthåbsgade</a>
+                                    </li>
                                     
                                     {{button}}
-                                    
-                                
                             </ul>
                             
-                            <div class="amenu"> <h4>Havnepladsen</h4> <p>{{product.place}}</p>        
-                            
-                            
-                            
-                            
-                            
-                            
+                            <div class="amenu" ng-show="btn.isSelected(1)"> 
+                                <h4>Havnepladsen</h4> 
+                                <p>{{product.place}}</p>        
+                            </div>
+                            <div class="amenu" ng-show="btn.isSelected(2)"> 
+                                <h4>Nonnebakken</h4> 
+                                <p>{{product.place}}</p>        
                             </div>
                             
                         </section>
