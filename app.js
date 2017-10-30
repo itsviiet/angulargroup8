@@ -3,12 +3,10 @@
 
     app.controller('BasketController', function(){
         this.products = basket;
-            console.log(basket);
     });
 
     app.controller("ReviewController", function(){
       this.review = {};
-        console.log();
 
       this.addReview = function(product){
         this.review.createdOn = Date.now();
@@ -16,21 +14,7 @@
         this.review = {};
       };
     });
-    
-    app.controller("ButtonController", function(){
-        this.button = 1;
-        console.log(button);
-        
-        this.selectButton = function(setButton){
-          this.button = setButton;  
-        };
-        this.isSelected = function(checkButton){
-          return this.tab === checkButton;  
-            
-        };
-    });
-    
-    
+   
     var basket = [{
         id: "1",
         place:'Havnepladsen',
