@@ -15,14 +15,14 @@ section {
 }
 
 .heading {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 /* Styling af navigation */
 
 nav {
 	background-color: darkslategrey;
-	padding: 20px 50px 5px 50px;
+	padding: 10px 50px 5px 50px;
 	color: #fff;
     position: fixed;
     width: 100%;
@@ -41,11 +41,12 @@ nav label {
     display: block;
     background: url(images/menu.svg) no-repeat 0 1px; 
     background-size: 40px auto; 
-    padding: 0 0 10px 50px; 
+    padding: 0 0 40px 50px; 
+    cursor: pointer;
 }
 
 nav label div {
-    margin: 10px 0 0 0;
+    margin: 0;
     display: none;
 }
 
@@ -65,6 +66,8 @@ nav label div a:hover {
 }
 
 /* Stop: styling af navigation */
+
+/* Styling af valid/invalid form elementer*/
 
 .ng-invalid.ng-dirty {
     border-color: red;
