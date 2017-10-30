@@ -110,8 +110,40 @@
                         
                     
                         <div >
-                            <p ng-repeat="product in basket.products">{{product.place}}</p>
+                            <button ng-repeat="product in basket.products">{{product.place}}</button>
+                            
                         </div>
+                        
+                        <section>
+                            
+                            <ul>
+                                   
+                                   <li><a href ng-click="button = 1">Havnepladsen</a></li>
+                                   <li><a href ng-click="button = 2">Havnepladsen</a></li>
+                                   <li><a href ng-click="button = 3">Havnepladsen</a></li>
+                                   <li><a href ng-click="button = 4">Havnepladsen</a></li>
+                                   <li><a href ng-click="button = 5">Havnepladsen</a></li>
+                                   <li><a href ng-click="button = 6">Havnepladsen</a></li>
+                                   <li><a href ng-click="button = 7">Havnepladsen</a></li>
+                                   <li><a href ng-click="button = 8">Havnepladsen</a></li>
+                                   <li><a href ng-click="button = 9">Havnepladsen</a></li>
+                                   <li><a href ng-click="button = 10">Havnepladsen</a></li>
+                                    
+                                    {{button}}
+                                    
+                                
+                            </ul>
+                            
+                            <div class="amenu"> <h4>Havnepladsen</h4> <p>{{product.place}}</p>        
+                            
+                            
+                            
+                            
+                            
+                            
+                            </div>
+                            
+                        </section>
                      
 
                 </section>
