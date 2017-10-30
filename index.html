@@ -10,38 +10,42 @@
     <link rel="stylesheet" href="style.css">
     <!--- font --->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <!-- Angular JS CDN -->
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-     
-     <!-- link til app.js -->
-    <script type="text/javascript" src="app.js"></script>
 </head>
 
 <body ng-controller="BasketController as basket">
 
-    <nav> 
-        <label> 
-            <input type="checkbox">
-                <div>
-                    <a href="#heading1">Kort</a>
-                    <a href="#heading2">Anmeld banerne</a>
-                    <a href="#heading3">Se anmeldelser</a>
-                </div> 
-        </label>
-    </nav>
-   
     <main>
-      
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <a class="navbar-brand" href="#">Basket i Odense</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#heading1">Kort <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#heading2">Anmeld banerne</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#heading3">Se anmeldelser</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
        <section class="container">
             <section class="row">
                 <section class="col-md-12">
 
-                        <h1 id="heading1" class="heading">Basketbaner i Odense</h1>
+                        <h1 id="heading1">Basketbaner i Odense</h1>
 
                         <iframe class="embed-responsive" height="500"  src="https://portal.opendata.dk/dataset/basketbaner/resource/d26e1795-4e52-4358-83b5-7cc1738610d2/view/eb4213ae-0b42-4653-af1d-ccbe0357346b" frameborder="0"></iframe>
 
                         <div>
-                          <h1 id="heading2" class="heading">Anmeld banerne</h1>
+                          <h1 id="heading2">Anmeld banerne</h1>
 
                           <form name="reviewForm" role="form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 
@@ -60,6 +64,7 @@
                             <fieldset class="form-group">
                               <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="basket.place for basket in basket" title="field">
                                 <option value="">Vælg bane</option>
+                                
                               </select>
                             </fieldset>
                             
@@ -74,33 +79,41 @@
                             </fieldset>
                             
                             <fieldset class="form-group">
-                              <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" required/>
+                              <input ng-model="reviewCtrl.review.author" type="email" class="form-control" class="ng-pristine ng-invalid" placeholder="randomEmail@gmail.com" title="Email" required/>
                             </fieldset>
                             
                             
                             <fieldset class="form-group">
-                              <input type="submit" class="btn btn-primary pull-right" value="Submit" />
+                              <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
                             </fieldset>
                           </form>
                         </div>
 
-                        <h1 id="heading3" class="heading">Se anmeldelser</h1>
+                        <h1 id="heading3">Se anmeldelser</h1>
                         
                         <blockquote ng-repeat="review in product.reviews">
                             <b>Stars: {{reviewCtrl.review.stars}}</b>
                             {{reviewCtrl.review.body}}
                             <cite>By: {{reviewtrl.review.author}}</cite>
                         </blockquote>
-                    
+                      <section>
+                          <ul> class="nav nav-pills"</ul>
+                          <li> <a href ng-click="tab = 1 " ng-repaetreview in product.reviews>Se anmeldelser</a></li>
+                          
+                          {{tab}}
+                      </section>
                 </section>
             </section>
         </section>
    
     </main>
     
-    <!-- JQeury cdn -->
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> 
-    
+    <!-- Angular JS CDN -->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+     
+     <!-- link til app.js -->
+    <script type="text/javascript" src="app.js"></script>
+
     <!-- Bootstrap CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
