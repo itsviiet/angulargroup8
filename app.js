@@ -3,10 +3,12 @@
 
     app.controller('BasketController', function(){
         this.products = basket;
+            console.log(basket);
     });
 
     app.controller("ReviewController", function(){
       this.review = {};
+        console.log();
 
       this.addReview = function(product){
         this.review.createdOn = Date.now();
