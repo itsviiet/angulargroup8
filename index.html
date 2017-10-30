@@ -69,7 +69,7 @@
                             </blockquote>
  <!-- LAV NG-OPTIONS SÅ KUN PLACE KOMMER FREM I DET -->
                             <fieldset class="form-group">
-                              <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="places for places in ['Odense','Havnen']" title="place">
+                              <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="places for places in ['Havnepladsen', 'Nonnebakken Multibane', 'Dronningensgade', 'Idrætslegepladsen i Vollmose', 'Willeruplundparken', 'Børnenes Jord Multibane', 'Motionsplads Elisevej', 'Villestoftengen Multibane', 'Korup Klubben', 'Godthåbsgade']" title="place">
                                 <option value="">Vælg bane</option>
                                 
                               </select>
@@ -101,16 +101,7 @@
                         <div >
                             <p ng-repeat="product in basket.products">{{product.place}}</p>
                         </div>
-                        
-                       
-                        
-                        
-                      <section>
-                          <ul> class="nav nav-pills"</ul>
-                          <li> <a href ng-click="tab = basket ">Se anmeldelser</a></li>
-                          
-                          {{tab}}
-                      </section>
+                     
                 </section>
             </section>
         </section>
