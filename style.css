@@ -6,66 +6,14 @@ body {
 }
 
 main {
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto;
-}
-
-section {
-    height: 1500px;
 }
 
 .heading {
     margin-top: 70px;
 }
 
-/* Styling af navigation */
-
-nav {
-	background-color: darkslategrey;
-	padding: 10px 50px 5px 50px;
-	color: #fff;
-    position: fixed;
-    width: 100%;
-    z-index: 99;
-}
-
-nav a {
-	color: #fff;
-	text-decoration: none;
-	display: block;
-	padding: 10px 0px 10px 0px;
-    border-bottom: 1px solid darkslategrey;
-}
-
-nav label {
-    display: block;
-    background: url(images/menu.svg) no-repeat 0 1px; 
-    background-size: 40px auto; 
-    padding: 0 0 40px 50px; 
-    cursor: pointer;
-}
-
-nav label div {
-    margin: 0;
-    display: none;
-}
-
-nav label input {
-    display: none;
-}
-
-nav label input:checked ~ div {
-    display: block;
-}
-
-nav label div a:hover {
-    color: white;
-    text-decoration: none; 
-    border-bottom: 1px solid white;
-        
-}
-
-/* Stop: styling af navigation */
 
 /* Styling af valid/invalid form elementer*/
 
