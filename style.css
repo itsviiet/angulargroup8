@@ -27,3 +27,15 @@ main {
 .ng-valid.ng-dirty {
     border-color: green;
 }
+
+/* styling af "menu" under kort */
+
+div div div h5 a {
+    color: darkslategrey;
+}
+
+div div div h5 a:hover {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}

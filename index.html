@@ -36,14 +36,165 @@
           </div>
         </nav>
 
-       <section class="container">
-            <section class="row">
-                <section class="col-md-12">
+    <section class="container">
+        <section class="row">
+            <section class="col-md-12">
 
-                        <h1 id="heading1" class="heading">Basketbaner i Odense</h1>
+                    <h1 id="heading1" class="heading">Basketbaner i Odense</h1>
 
-                        <iframe class="embed-responsive" height="500"  src="https://portal.opendata.dk/dataset/basketbaner/resource/d26e1795-4e52-4358-83b5-7cc1738610d2/view/eb4213ae-0b42-4653-af1d-ccbe0357346b" frameborder="0"></iframe>
+                    <iframe class="embed-responsive" height="500"  src="https://portal.opendata.dk/dataset/basketbaner/resource/d26e1795-4e52-4358-83b5-7cc1738610d2/view/eb4213ae-0b42-4653-af1d-ccbe0357346b" frameborder="0"></iframe>
 
+        <div id="accordion" role="tablist">
+              <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          {{basket.products[0].place}}
+                        </a>
+                  </h5>
+                </div>
+           
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body" ng-controller="BasketController as basket">
+               <p>{{basket.products[0].description}}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  {{basket.products[1].place}}
+                </a>
+              </h5>
+            </div>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <p>{{basket.products[1].description}}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header" role="tab" id="headingThree">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              {{basket.products[2].place}}
+            </a>
+         </h5>
+        </div>
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <p>{{basket.products[2].description}}</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="card">
+        <div class="card-header" role="tab" id="headingFour">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+              {{basket.products[3].place}}
+            </a>
+         </h5>
+        </div>
+        <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFor" data-parent="#accordion">
+          <div class="card-body">
+            <p>{{basket.products[3].description}}</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="card">
+        <div class="card-header" role="tab" id="headingFive">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+              {{basket.products[4].place}}
+            </a>
+         </h5>
+        </div>
+        <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
+          <div class="card-body">
+            <p>{{basket.products[4].description}}</p>
+          </div>
+        </div>
+        
+        </div>
+        <div class="card">
+        <div class="card-header" role="tab" id="headingSix">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
+              {{basket.products[5].place}}
+            </a>
+         </h5>
+        </div>
+        <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSixe" data-parent="#accordion">
+          <div class="card-body">
+            <p>{{basket.products[5].description}}</p>
+          </div>
+        </div>
+        
+        </div>
+        <div class="card">
+        <div class="card-header" role="tab" id="headingSeven">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseThree">
+              {{basket.products[6].place}}
+            </a>
+         </h5>
+        </div>
+        <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven" data-parent="#accordion">
+          <div class="card-body">
+            <p>{{basket.products[6].description}}</p>
+          </div>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-header" role="tab" id="headingEight">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseThree">
+              {{basket.products[7].place}}
+            </a>
+         </h5>
+        </div>
+        <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight" data-parent="#accordion">
+          <div class="card-body">
+            <p>{{basket.products[7].description}}</p>
+          </div>
+        </div>
+        </div>
+        
+        <div class="card">
+        <div class="card-header" role="tab" id="headingNine">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseThree">
+              {{basket.products[8].place}}
+            </a>
+         </h5>
+        </div>
+        <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine" data-parent="#accordion">
+          <div class="card-body">
+            <p>{{basket.products[8].description}}</p>
+          </div>
+        </div>
+        </div>
+        
+        <div class="card">
+        <div class="card-header" role="tab" id="headingTen">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseTen" aria-expanded="false" aria-controls="collapseThree">
+              {{basket.products[9].place}}
+            </a>
+         </h5>
+        </div>
+        <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen" data-parent="#accordion">
+          <div class="card-body">
+            <p>{{basket.products[9].description}}</p>
+          </div>
+        </div>
+    </div>
+    
                         <div>
                           <h1 id="heading2" class="heading">Anmeld banerne</h1>
 
@@ -93,13 +244,20 @@
                             <fieldset class="form-group">
                               <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
                             </fieldset>
-                          </form>
-                        </div>
+                     
+                <h1 id="heading3" class="heading">Se anmeldelser</h1>      
+                                          
+                <div ng-repeat="product in basket.products">
+                   <blockquote ng-repeat="review in product.reviews">
+                    <b>Stars: {{reviewCtrl.review.stars}}</b>
+                    {{reviewCtrl.review.body}}
+                    <cite>By: {{reviewtrl.review.author}}</cite> 
+                </blockquote>
+               </div>
+                                     
+                </form>
+            </div>
 
-                        <h1 id="heading3" class="heading">Se anmeldelser</h1>
-                        
-
-                        
                         <!--<blockquote ng-repeat="review in product.reviews">
                             <b>Stars: {{reviewCtrl.review.stars}}</b>
                             {{reviewCtrl.review.body}}
@@ -107,63 +265,13 @@
                             
                         </blockquote> -->
                         
-                        
                     <!--
                         <div >
-                            <button ng-repeat="product in basket.products">{{product.place}}</button>
+                            <p ng-repeat="product in basket.products">{{product.place}}</p>
                             
                         </div>
                     --> 
                         
-                        <section ng-controller="ButtonController as btn">
-                            
-                            <ul class="nav nav-pills flex-column">
-                                   <li class="nav-item" ng-class="{ active:btn.isSelected(1)}">
-                                       <a class="nav-link" href ng-click="btn.selectButton(1)">Havnepladsen</a>
-                                    </li>
-                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(2)}">
-                                       <a class="nav-link" href ng-click="btn.selectButton(2)">Nonnebakken Multibane</a>
-                                    </li>
-                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(3)}">
-                                       <a class="nav-link" href ng-click="btn.selectButton(3)">Dronningensgade</a>
-                                    </li>
-                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(4)}">
-                                       <a class="nav-link" href ng-click="btn.selectButton(4)">Idrætspladsen i Vollsmose</a>
-                                    </li>
-                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(5)}">
-                                       <a class="nav-link" href ng-click="btn.selectButton(5)">Willeruplundparken</a>
-                                    </li>
-                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(6)}">
-                                       <a class="nav-link" href ng-click="btn.selectButton(6)">Børnenes Jord Multibane</a>
-                                    </li>
-                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(7)}">
-                                       <a class="nav-link " href ng-click="bbtn.selectButton(7)">Motionsplads Elisevej</a>
-                                    </li>
-                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(7)}">
-                                       <a class="nav-link" href ng-click="btn.selectButton(8)">Villestoftengen Multibane</a>
-                                    </li>
-                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(9)}">
-                                       <a class="nav-link " href ng-click="bbtn.selectButton(9)">Korup Klubben</a>
-                                    </li>
-                                   <li class="nav-item mt-2" ng-class="{ active:btn.isSelected(10)}">
-                                       <a class="nav-link " href ng-click="btn.selectButton(10)">Godthåbsgade</a>
-                                    </li>
-                                    
-                                    {{button}}
-                            </ul>
-                            
-                            <div class="amenu" ng-show="btn.isSelected(1)"> 
-                                <h4>Havnepladsen</h4> 
-                                <p>{{product.place}}</p>        
-                            </div>
-                            <div class="amenu" ng-show="btn.isSelected(2)"> 
-                                <h4>Nonnebakken</h4> 
-                                <p>{{product.place}}</p>        
-                            </div>
-                            
-                        </section>
-                     
-
                 </section>
             </section>
         </section>
