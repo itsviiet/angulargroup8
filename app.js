@@ -1,7 +1,7 @@
-(function(){
+(function () {
     var app = angular.module('basketball', []);
 
-    app.controller('BasketController', function(){
+    app.controller('BasketController', function () {
         this.products = basket;
     });
 

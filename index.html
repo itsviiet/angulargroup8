@@ -15,6 +15,7 @@
 <body ng-controller="BasketController as basket">
 
     <main>
+<!-- Navigation start -->       
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
           <a class="navbar-brand" href="#heading1">Basket i Odense</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,15 +36,19 @@
             </ul>
           </div>
         </nav>
-
+<!-- Navigation stop -->
+   
     <section class="container">
         <section class="row">
             <section class="col-md-12">
 
                     <h1 id="heading1" class="heading">Basketbaner i Odense</h1>
 
+<!-- Kort start -->
                     <iframe class="embed-responsive" height="500"  src="https://portal.opendata.dk/dataset/basketbaner/resource/d26e1795-4e52-4358-83b5-7cc1738610d2/view/eb4213ae-0b42-4653-af1d-ccbe0357346b" frameborder="0"></iframe>
+<!-- Kort slut -->
 
+<!-- Liste med navne og beskrivelser på basketbaner start -->
         <div id="accordion" role="tablist">
               <div class="card">
                 <div class="card-header" role="tab" id="headingOne">
@@ -194,6 +199,7 @@
           </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     <h1 id="heading3" class="heading">Se anmeldelser</h1>
 
@@ -279,6 +285,82 @@
                         </div>
                     -->
 
+=======
+<!-- Liste med navne og beskrivelser på basketbaner slut -->
+    
+<!-- Section med formular start -->
+    <section>
+        <h1 id="heading2" class="heading">Anmeld banerne</h1>
+<!-- Formular start --> 
+            <form name="reviewForm" role="form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+                           
+<!--  Live Preview start -->
+            <blockquote ng-show="reviewCtrl.review.field">
+                <b>{{reviewCtrl.review.field}}</b>
+                    <br>
+                    {{reviewCtrl.review.stars}} Stjerner
+                    <br>
+                    {{reviewCtrl.review.body}}
+                    <br>
+                    <cite class="clearfix">—{{" " + reviewCtrl.review.author}}</cite>
+                    </blockquote>
+<!-- Live Preview stop -->
+                             
+<!-- Vælg bane start -->                         
+                    <fieldset class="form-group">
+                        <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="places for places in ['Havnepladsen', 'Nonnebakken Multibane', 'Dronningensgade', 'Idrætslegepladsen i Vollmose', 'Willeruplundparken', 'Børnenes Jord Multibane', 'Motionsplads Elisevej', 'Villestoftengen Multibane', 'Korup Klubben', 'Godthåbsgade']" title="place" required>
+                            <option value="">Vælg bane</option>
+                        </select>
+                    </fieldset>
+<!-- Vælg bane slut -->
+
+<!-- Giv stjerner start -->                              
+                    <fieldset class="form-group">
+                        <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
+                            <option value="">Stjerner</option>
+                        </select>
+                    </fieldset>
+<!-- Giv stjerner slut -->
+                            
+<!-- Skriv anmeldelse start -->
+                    <fieldset class="form-group">
+                        <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Skriv en kort beskrivelse af din oplevelse" rows="3" title="Review" required></textarea>
+                    </fieldset>
+<!-- Giv anmeldelse slut -->
+                            
+<!-- Angiv forfatter start -->                            
+                    <fieldset class="form-group">
+                        <input ng-model="reviewCtrl.review.author" type="email" name="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" required/>
+                    </fieldset>
+<!-- Angiv forfatter slut -->   
+                    
+<!-- Submit knap start -->        
+                        <div>reviewForm is {{reviewForm.$valid}}</div>
+                    <fieldset class="form-group">
+                        <input type="submit" class="btn btn-primary pull-right" value="Submit" />
+                    </fieldset>  
+<!-- Submit knap slut -->                              
+                </form>
+            </section>
+<!-- Section med formular slut -->
+                             
+            <h1 id="heading3" class="heading">Se anmeldelser</h1>      
+<!-- Vis reviews start -->              
+            <div ng-controller="ReviewController as reviewCtrl">
+                <div ng-repeat="product in basket.products">
+                    <div ng-show="review in product.reviews" ng-repeat="review in product.reviews">
+                        <blockquote>
+                           {{reviewCtrl.review.field}}
+                           <b>Stars: {{reviewCtrl.review.stars}}</b>
+                            {{reviewCtrl.review.body}}
+                            <cite>By: {{reviewCtrl.review.author}}</cite> 
+                        </blockquote>
+                     </div>
+                </div>       
+            </div>                                                 
+<!-- Vis reviews slut -->   
+               
+>>>>>>> 5bdbe46cd2275a44d4a52770dd9115ecbf9aca66
                 </section>
             </section>
         </section>
