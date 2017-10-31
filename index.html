@@ -213,49 +213,43 @@
 </li>
 
 
-                        <div>
+
                           <h1 id="heading3" class="heading">Anmeld banerne</h1>
 
-                          <form name="reviewForm" role="form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+                          <form name="reviewForm" role="form" ng-controller="ReviewController as reviews" ng-submit="reviews.addReview(product)">
 
                             <!--  Live Preview -->
-                            <blockquote ng-show="reviewCtrl.review.field">
-                            <b>{{reviewCtrl.review.field}}</b>
+                            <blockquote ng-show="reviews.review.field">
+                            <b>{{reviews.review.field}}</b>
                                 <br>
-                              {{reviewCtrl.review.stars}} Stjerner
+                              {{reviews.review.stars}} Stjerner
                                 <br>
-                              {{reviewCtrl.review.body}}
+                              {{reviews.review.body}}
                                 <br>
-                              <cite class="clearfix">—{{" " + reviewCtrl.review.author}}</cite>
+                              <cite class="clearfix">—{{" " + reviews.review.author}}</cite>
                             </blockquote>
 
                             <fieldset class="form-group">
-                              <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="places for places in ['Havnepladsen', 'Nonnebakken Multibane', 'Dronningensgade', 'Idrætslegepladsen i Vollmose', 'Willeruplundparken', 'Børnenes Jord Multibane', 'Motionsplads Elisevej', 'Villestoftengen Multibane', 'Korup Klubben', 'Godthåbsgade']" title="place">
+                              <select ng-model="reviews.review.field" class="form-control" ng-options="places for places in ['Havnepladsen', 'Nonnebakken Multibane', 'Dronningensgade', 'Idrætslegepladsen i Vollmose', 'Willeruplundparken', 'Børnenes Jord Multibane', 'Motionsplads Elisevej', 'Villestoftengen Multibane', 'Korup Klubben', 'Godthåbsgade']" title="place">
                                 <option value="">Vælg bane</option>
-
                               </select>
                             </fieldset>
-
                             <fieldset class="form-group">
-                              <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
+                              <select ng-model="reviews.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
                                 <option value="">Stjerner</option>
                               </select>
                             </fieldset>
-
                             <fieldset class="form-group">
-                              <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Skriv en kort beskrivelse af din oplevelse" rows="3" title="Review" required></textarea>
+                              <textarea ng-model="reviews.review.body" class="form-control" placeholder="Skriv en kort beskrivelse af din oplevelse" rows="3" title="Review" required></textarea>
                             </fieldset>
-
                             <fieldset class="form-group">
-                              <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" required/>
+                              <input ng-model="reviews.review.author" type="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" required/>
                             </fieldset>
-
-
                             <fieldset class="form-group">
                               <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-                              </fieldset>
+                            </fieldset>
                 </form>
-            </div>
+          
 
                 </section>
             </section>
