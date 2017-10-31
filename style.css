@@ -49,3 +49,7 @@ div div div h5 a:hover {
 .card:hover {
     background-color: rgba(0,0,0, 0.1);
 }
+
+li {
+    list-style: none;
+}
