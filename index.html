@@ -199,6 +199,7 @@
           </div>
         </div>
     </div>
+    </div>
 <!-- Liste med navne og beskrivelser på basketbaner slut -->
     
 <!-- Section med formular start -->
@@ -259,20 +260,23 @@
                              
             <h1 id="heading3" class="heading">Se anmeldelser</h1>      
 <!-- Vis reviews start -->              
-            <div ng-controller="ReviewController as reviewCtrl">
-                <div ng-repeat="product in basket.products">
-                    <div ng-show="review in product.reviews" ng-repeat="review in product.reviews">
-                        <blockquote>
-                           {{reviewCtrl.review.field}}
-                           <b>Stars: {{reviewCtrl.review.stars}}</b>
-                            {{reviewCtrl.review.body}}
-                            <cite>By: {{reviewCtrl.review.author}}</cite> 
-                        </blockquote>
-                     </div>
-                </div>       
-            </div>                                                 
-<!-- Vis reviews slut -->   
+            
                
+                <p ng-repeat="product in basket.products">
+                 
+                 {{ basket.products[product].id}} 
+                 
+                 
+              {{ basket.products[0].reviews[0]}}
+                 <!-- {{ product  -->
+                 {{ basket.product.id}} 
+                 
+                  
+                </p>       
+                
+                                                          
+<!-- Vis reviews slut -->   
+                
                 </section>
             </section>
         </section>

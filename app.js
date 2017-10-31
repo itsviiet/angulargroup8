@@ -12,17 +12,22 @@
         this.review.createdOn = Date.now();
         product.reviews.push(this.review);
         this.review = {};
+          console.log("submit");
       };
     });
    
+    
+    
+    
+    
     var basket = [{
         id: "1",
         place:'Havnepladsen',
         description: 'Basketbane på Havnepladsen. Her er også offentlige toiletter.',
         reviews: [{
-            field: "Havnen",
+            field: "Havnepladsen",
             stars: 5,
-            body: "Ok place",
+            body: "Nyt og godt!",
             author: "123@gmail.com"
       }]
     },
@@ -33,8 +38,8 @@
         reviews: [{
             field: "Nonnebakken multibane",
             stars: 4,
-            body: "Ok place",
-            author: "123@gmail.com"
+            body: "Det er godt der både er mulighed for fodbold og basket.",
+            author: "456@gmail.com"
       }]
     },
     {
@@ -44,8 +49,8 @@
         reviews: [{
             field: "Dronningensgade",
             stars: 3,
-            body: "Ok place",
-            author: "123@gmail.com"
+            body: "Ligger centralt og gode forhold.",
+            author: "987@gmail.com"
       }]
     },
        {
@@ -53,10 +58,10 @@
         place: 'Idrætslegepladsen i Vollsmose',
         description: 'Basketbaner på Idrætslegepladsen i Vollsmose. Her kan man også spille streetsoccer.',
         reviews: [{
-            field: "Dronningensgade",
+            field: "Idrætslegepladsen i Vollsmose",
             stars: 3,
-            body: "Ok place",
-            author: "123@gmail.com"
+            body: "Det er et okay sted.",
+            author: "246@gmail.com"
       }]
     },
                   {
@@ -64,10 +69,10 @@
         place: 'Willeruplundparken',
         description: 'Basketkurve opsat på plæne ved legepladsen i Willeruplundparken.',
         reviews: [{
-            field: "Dronningensgade",
-            stars: 3,
-            body: "Ok place",
-            author: "123@gmail.com"
+            field: "Willeruplundparken",
+            stars: 2,
+            body: "Der er både legeplads og basket, fedt!",
+            author: "579@gmail.com"
       }]
     },
                   {
@@ -75,9 +80,9 @@
         place: 'Børnenes Jord Multibane',
         description: 'Multibane med fodboldmål, basketkurve og bander ved legepladsen Børnenes Ø. Legepladsen ligger ved Højstrupskolen og KFUMs fodboldbaner. Her er også bålhus m.m.',
         reviews: [{
-            field: "Dronningensgade",
-            stars: 3,
-            body: "Ok place",
+            field: "Børnenes Jord Multibane",
+            stars: 4,
+            body: "Ligger tæt på skoler, så et godt sted for børn.",
             author: "123@gmail.com"
       }]
     },
@@ -86,10 +91,10 @@
         place: 'Motionsplads Elisevej',
         description: 'Basketbane på motionsplads ved Elisevej. Bemærk: Der går en vej på tværs, så husk at holde øje med trafikken og hinanden.',
         reviews: [{
-            field: "Dronningensgade",
-            stars: 3,
-            body: "Ok place",
-            author: "123@gmail.com"
+            field: "Motionsplads Elisevej",
+            stars: 1,
+            body: "Der er en vej igennem stedet. Ikke godt.",
+            author: "334@gmail.com"
       }]
     },
                   {
@@ -97,10 +102,10 @@
         place: 'Villestoftengen Multibane',
         description: 'Multibane med asfalt, bander, basketnet og fodboldmål.',
         reviews: [{
-            field: "Dronningensgade",
+            field: "Villestoftengen Multibane",
             stars: 3,
-            body: "Ok place",
-            author: "123@gmail.com"
+            body: "Mange muligheder for boldspil.",
+            author: "655@gmail.com"
       }]
     },
                   {
@@ -108,10 +113,10 @@
         place: 'Korup Klubben',
         description: 'Multibane med asfalt, bander, basketnet og fodboldmål.',
         reviews: [{
-            field: "Dronningensgade",
-            stars: 3,
-            body: "Ok place",
-            author: "123@gmail.com"
+            field: "Korup Klubben",
+            stars: 5,
+            body: "Virkelig godt sted!",
+            author: "333@gmail.com"
       }]
     },
         {
@@ -119,10 +124,10 @@
         place: 'Godthåbsgade',
         description: 'Basketnet på græsareal i lille grønt område mellem Godthåbsgade og Hjallesevej.',
         reviews: [{
-            field: "Nonnebakken multibane",
+            field: "Godthåbsgade",
             stars: 4,
-            body: "Ok place",
-            author: "123@gmail.com"
+            body: "Godt bane til basket.",
+            author: "999@gmail.com"
       }]
     }];
 })();
