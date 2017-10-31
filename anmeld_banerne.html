@@ -1,0 +1,46 @@
+<!-- Overskrift -->
+<h1 id="heading3" class="heading">Anmeld banerne</h1>
+
+   <!-- Formular til at anmdelde basket banerne - alle felter skal udfyldes før angular kan validere formularen og den kan submittes, kan ses ved at valid = grøn og invalid = rød -->
+    <form name="reviewForm" role="form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+
+        <!--  Live Preview - så brugeren kan se deres anmeldelse før du submitter -->
+        <blockquote ng-show="reviewCtrl.review.field">
+            <b>{{reviewCtrl.review.field}}</b>
+            <br>
+            {{reviewCtrl.review.stars}} Stjerner
+            <br>
+            {{reviewCtrl.review.body}}
+            <br>
+            <cite class="clearfix">—{{" " + reviewCtrl.review.author}}</cite>
+        </blockquote>
+
+       <!-- Dropdown der gør det muligt at vælge bane at anmelde -->
+        <fieldset class="form-group">
+            <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="places for places in ['Havnepladsen', 'Nonnebakken Multibane', 'Dronningensgade', 'Idrætslegepladsen i Vollmose', 'Willeruplundparken', 'Børnenes Jord Multibane', 'Motionsplads Elisevej', 'Villestoftengen Multibane', 'Korup Klubben', 'Godthåbsgade']" title="place">
+                <option value="">Vælg bane</option>
+            </select>
+        </fieldset>
+
+       <!-- Dropdown der gør det muligt at vælge antal stjerner man vil give banen -->
+        <fieldset class="form-group">
+            <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
+                <option value="">Stjerner</option>
+            </select>
+        </fieldset>
+
+       <!-- Tekstfelt hvor man skal skrive havd man synes om banen -->
+        <fieldset class="form-group">
+            <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Skriv en kort beskrivelse af din oplevelse" rows="3" title="Review" required></textarea>
+        </fieldset>
+
+       <!-- Input email felt som viser hvem der har skrevet anmeldelsen  -->
+        <fieldset class="form-group">
+            <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" required/>
+        </fieldset>
+
+        <!-- Submit knap -->
+        <fieldset class="form-group">
+            <input type="submit" class="btn btn-primary pull-right" value="Send" />
+        </fieldset>
+    </form>

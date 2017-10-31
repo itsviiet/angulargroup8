@@ -1,10 +1,13 @@
+//Funktion der skaber et module, der indeholder alt til applikationen
 (function () {
     var app = angular.module('basketball', []);
-
+    
+    //Controller der henter information fra JSON array basket
     app.controller('BasketController', function () {
         this.products = basket;
     });
 
+    //Controller der styrer reviews (visning + preview)
     app.controller("ReviewController", function(){
       this.review = {};
 
@@ -12,15 +15,16 @@
         this.review.createdOn = Date.now();
         product.reviews.push(this.review);
         this.review = {};
-          console.log("submit");
       };
 
     });
 
+    //JSON array der indeholder data til brug i controller
     var basket = [{
         id: "1",
         place:'Havnepladsen',
         description: 'Basketbane på Havnepladsen. Her er også offentlige toiletter.',
+        //I hvert datasæt er der et ekstra array der tilføjer reviews
         reviews: [{
             field: "Havnepladsen",
             stars: 5,
@@ -123,7 +127,7 @@
         reviews: [{
             field: "Godthåbsgade",
             stars: 4,
-            body: "Godt bane til basket.",
+            body: "God bane til basket.",
             author: "999@gmail.com"
       }]
     }];

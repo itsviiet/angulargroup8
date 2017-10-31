@@ -1,0 +1,12 @@
+<!-- Overskrift -->
+<h1 id="heading2" class="heading">Se anmeldelser</h1>
+
+   <!-- Skaber et loop som henter data fra JSON array: basket under reviews -->
+    <li ng-repeat="product in basket.products">
+        <blockquote ng-repeat="review in product.reviews">
+            <b>{{review.field}}</b><br />
+            {{review.stars}} Stjerner <br />
+            {{review.body}}<br />
+            <cite class="clearfix">-{{" " + review.author}} </cite>
+        </blockquote>
+    </li>

@@ -13,270 +13,30 @@
 </head>
 
 <body ng-controller="BasketController as basket">
-
-    
-     
-      
-       
-        
+   
  <main>
-<!-- Navigation start -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-          <a class="navbar-brand" href="#heading1">Basket i Odense</a>
-                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                      </button>
-
-   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                      <li class="nav-item">
-        <a class="nav-link" href="#heading1">Kort <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item">
-        <a class="nav-link" href="#heading2">Se anmeldelser</a>
-                      </li>
-                      <li class="nav-item">
-        <a class="nav-link" href="#heading3">Anmeld banerne</a>
-                      </li>
-                      </ul>
-    </div>
-    </nav>
-<!-- Navigation stop -->
+ 
+    <!-- Inkluderer navigation -->
+    <div ng-include="'navigation.html'"></div>
 
     <section class="container">
-    <section class="row">
-    <section class="col-md-12">
+        <section class="row">
+            <section class="col-md-12"> <!-- Angiver at indholdet må strække sig i alle 12 kolonner -->
 
-                    <h1 id="heading1" class="heading">Basketbaner i Odense</h1>
+                <!-- Inkluderer kort og liste med information om banerne -->
+                 <div ng-include="'kort.html'"></div>  
+                
+                <!-- Inkluderer de allerede skrevne anmeldelser -->   
+                 <div ng-include="'se_anmeldelser.html'"></div> 
+                
+                <!-- Inkluderer formular til at anmelde banerne -->
+                 <div ng-include="'anmeld_banerne.html'"></div>    
 
-<!-- Kort start -->
-                    <iframe class="embed-responsive" height="500"  src="https://portal.opendata.dk/dataset/basketbaner/resource/d26e1795-4e52-4358-83b5-7cc1738610d2/view/eb4213ae-0b42-4653-af1d-ccbe0357346b" frameborder="0"></iframe>
-<!-- Kort slut -->
-
-<!-- Liste med navne og beskrivelser på basketbaner start -->
-    <div id="accordion" role="tablist">
-    <div class="card">
-    <div class="card-header" role="tab" id="headingOne">
-                    <h5 class="mb-0">
-            <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    {{basket.products[0].place}}
-            </a>
-            </h5>
-    </div>
-
-    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-    <div class="card-body" ng-controller="BasketController as basket">
-                    <p>{{basket.products[0].description}}</p>
-    </div>
-    </div>
-    </div>
-
-    <div class="card">
-    <div class="card-header" role="tab" id="headingTwo">
-                    <h5 class="mb-0">
-            <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  {{basket.products[1].place}}
-              </a>
-              </h5>
-    </div>
-       
-    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-    <div class="card-body">
-                    <p>{{basket.products[1].description}}</p>
-    </div>
-    </div>
-    </div>
-
-    <div class="card">
-    <div class="card-header" role="tab" id="headingThree">
-                   <h5 class="mb-0">
-          <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  {{basket.products[2].place}}
-              </a>
-              </h5>
-    </div>
-       
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-    <div class="card-body">
-                   <p>{{basket.products[2].description}}</p>
-    </div>
-    </div>
-    </div>
-
-    <div class="card">
-    <div class="card-header" role="tab" id="headingFour">
-                   <h5 class="mb-0">
-           <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-              {{basket.products[3].place}}
-           </a>
-                   </h5>
-    </div>
-       
-    <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFor" data-parent="#accordion">
-    <div class="card-body">
-                   <p>{{basket.products[3].description}}</p>
-    </div>
-    </div>
-    </div>
-
-    <div class="card">
-    <div class="card-header" role="tab" id="headingFive">
-                   <h5 class="mb-0">
-            <a class="collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
-                   {{basket.products[4].place}}
-            </a>
-                   </h5>
-    </div>
-       
-    <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
-    <div class="card-body">
-                   <p>{{basket.products[4].description}}</p>
-    </div>
-    </div>
-
-    </div>
-    <div class="card">
-    <div class="card-header" role="tab" id="headingSix">
-                   <h5 class="mb-0">
-            <a class="collapsed" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
-                  {{basket.products[5].place}}
-            </a>
-                   </h5>
-    </div>
-       
-    <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSixe" data-parent="#accordion">
-    <div class="card-body">
-                   <p>{{basket.products[5].description}}</p>
-    </div>
-    </div>
-
-    </div>
-       
-    <div class="card">
-    <div class="card-header" role="tab" id="headingSeven">
-                   <h5 class="mb-0">
-            <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseThree">
-                   {{basket.products[6].place}}
-            </a>
-                   </h5>
-    </div>
-       
-    <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven" data-parent="#accordion">
-    <div class="card-body">
-                    <p>{{basket.products[6].description}}</p>
-    </div>
-    </div>
-    </div>
-       
-    <div class="card">
-    <div class="card-header" role="tab" id="headingEight">
-                   <h5 class="mb-0">
-            <a class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseThree">
-                {{basket.products[7].place}}
-            </a>
-                   </h5>
-    </div>
-    <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight" data-parent="#accordion">
-    <div class="card-body">
-                   <p>{{basket.products[7].description}}</p>
-    </div>
-    </div>
-    </div>
-
-    <div class="card">
-    <div class="card-header" role="tab" id="headingNine">
-                   <h5 class="mb-0">
-            <a class="collapsed" data-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseThree">
-                   {{basket.products[8].place}}
-            </a>
-                   </h5>
-    </div>
-    
-    <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine" data-parent="#accordion">
-    <div class="card-body">
-                   <p>{{basket.products[8].description}}</p>
-    </div>
-    </div>
-    </div>
-
-    <div class="card">
-    <div class="card-header" role="tab" id="headingTen">
-                   <h5 class="mb-0">
-            <a class="collapsed" data-toggle="collapse" href="#collapseTen" aria-expanded="false" aria-controls="collapseThree">
-                   {{basket.products[9].place}}
-            </a>
-                   </h5>
-    </div>
-       
-    <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen" data-parent="#accordion">
-    <div class="card-body">
-                   <p>{{basket.products[9].description}}</p>
-    </div>
-    </div>
-    </div>
-    </div>
-
-                  <h1 id="heading2" class="heading">Se anmeldelser</h1>
-
-    <li ng-repeat="product in basket.products">
-    <blockquote ng-repeat="review in product.reviews">
-                  <b>{{review.field}}</b><br />
-                  {{review.stars}} Stjerner <br />
-                  {{review.body}}<br />
-    <cite class="clearfix">-{{" " + review.author}} </cite>
-    </blockquote>
-    </li>
-
-
-    <div>
-                <h1 id="heading3" class="heading">Anmeld banerne</h1>
-
-                <form name="reviewForm" role="form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-
-        <!--  Live Preview -->
-                            <blockquote ng-show="reviewCtrl.review.field">
-                            <b>{{reviewCtrl.review.field}}</b>
-                                <br>
-                              {{reviewCtrl.review.stars}} Stjerner
-                                <br>
-                              {{reviewCtrl.review.body}}
-                                <br>
-                              <cite class="clearfix">—{{" " + reviewCtrl.review.author}}</cite>
-                            </blockquote>
-
-                            <fieldset class="form-group">
-                              <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="places for places in ['Havnepladsen', 'Nonnebakken Multibane', 'Dronningensgade', 'Idrætslegepladsen i Vollmose', 'Willeruplundparken', 'Børnenes Jord Multibane', 'Motionsplads Elisevej', 'Villestoftengen Multibane', 'Korup Klubben', 'Godthåbsgade']" title="place">
-                                <option value="">Vælg bane</option>
-
-                            </select>
-                            </fieldset>
-
-                            <fieldset class="form-group">
-                              <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
-                                <option value="">Stjerner</option>
-                              </select>
-                            </fieldset>
-
-                            <fieldset class="form-group">
-                              <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Skriv en kort beskrivelse af din oplevelse" rows="3" title="Review" required></textarea>
-                            </fieldset>
-
-                            <fieldset class="form-group">
-                              <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" required/>
-                            </fieldset>
-
-
-                            <fieldset class="form-group">
-                              <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-                            </fieldset>
-                </form>
-    </div>
-
-    </section>
-    </section>
+            </section>
+        </section>
     </section>
 
-    </main>
+</main>
 
     <!-- Angular JS CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
@@ -284,9 +44,13 @@
      <!-- link til app.js -->
     <script type="text/javascript" src="app.js"></script>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>
