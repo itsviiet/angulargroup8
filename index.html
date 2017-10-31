@@ -53,7 +53,7 @@
                         </a>
                   </h5>
                 </div>
-           
+
             <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card-body" ng-controller="BasketController as basket">
                <p>{{basket.products[0].description}}</p>
@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header" role="tab" id="headingThree">
           <h5 class="mb-0">
@@ -119,7 +119,7 @@
             <p>{{basket.products[4].description}}</p>
           </div>
         </div>
-        
+
         </div>
         <div class="card">
         <div class="card-header" role="tab" id="headingSix">
@@ -134,7 +134,7 @@
             <p>{{basket.products[5].description}}</p>
           </div>
         </div>
-        
+
         </div>
         <div class="card">
         <div class="card-header" role="tab" id="headingSeven">
@@ -164,7 +164,7 @@
           </div>
         </div>
         </div>
-        
+
         <div class="card">
         <div class="card-header" role="tab" id="headingNine">
           <h5 class="mb-0">
@@ -179,7 +179,7 @@
           </div>
         </div>
         </div>
-        
+
         <div class="card">
         <div class="card-header" role="tab" id="headingTen">
           <h5 class="mb-0">
@@ -194,12 +194,24 @@
           </div>
         </div>
     </div>
-    
+
+    <h1 id="heading3" class="heading">Se anmeldelser</h1>
+
+<li ng-repeat="product in basket.products">
+  <blockquote ng-repeat="review in product.reviews">
+    {{basket.products.place}}
+    <b>Stars: {{review.stars}}</b>
+    {{review.body}}
+    <cite class="clearfix">-{{review.author}} on {{review.createdOn | date}}</cite>
+  </blockquote>
+</li>
+
+
                         <div>
                           <h1 id="heading2" class="heading">Anmeld banerne</h1>
 
                           <form name="reviewForm" role="form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-                           
+
                             <!--  Live Preview -->
                             <blockquote ng-show="reviewCtrl.review.field">
                             <b>{{reviewCtrl.review.field}}</b>
@@ -214,71 +226,68 @@
                             <fieldset class="form-group">
                               <select ng-model="reviewCtrl.review.field" class="form-control" ng-options="places for places in ['Havnepladsen', 'Nonnebakken Multibane', 'Dronningensgade', 'Idrætslegepladsen i Vollmose', 'Willeruplundparken', 'Børnenes Jord Multibane', 'Motionsplads Elisevej', 'Villestoftengen Multibane', 'Korup Klubben', 'Godthåbsgade']" title="place">
                                 <option value="">Vælg bane</option>
-                                
+
                               </select>
                             </fieldset>
-                            
+
                             <fieldset class="form-group">
                               <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
                                 <option value="">Stjerner</option>
                               </select>
                             </fieldset>
-                            
+
                             <fieldset class="form-group">
                               <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Skriv en kort beskrivelse af din oplevelse" rows="3" title="Review" required></textarea>
                             </fieldset>
-                            
+
                             <fieldset class="form-group">
                               <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="randomEmail@gmail.com" title="Email" required/>
                             </fieldset>
-                            
-                            
+
+
                             <fieldset class="form-group">
                               <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-                              </fieldset>            
+                              </fieldset>
                 </form>
             </div>
 
-                             
-            <h1 id="heading3" class="heading">Se anmeldelser</h1>      
-                  
-            <div ng-controller="ReviewController as reviewCtrl">
-                
+
+            <!--- <div ng-controller="ReviewController as reviewCtrl">
+
                   <div ng-repeat="review in product.reviews">
-                       <blockquote 
-                                   >
+                       <blockquote>
                    {{reviewCtrl.review.field}}
                     <b>Stars: {{reviewCtrl.review.stars}}</b>
                     {{reviewCtrl.review.body}}
-                    <cite>By: {{reviewtrl.review.author}}</cite> 
+                    <cite>By: {{reviewCtrl.review.author}}</cite>
                 </blockquote>
                   </div>
-                   
-            </div>                                                      
-            
+
+            </div> ---- >
+
                         <!--<blockquote ng-repeat="review in product.reviews">
                             <b>Stars: {{reviewCtrl.review.stars}}</b>
                             {{reviewCtrl.review.body}}
                             <cite>By: {{reviewtrl.review.author}}</cite>
-                            
+
                         </blockquote> -->
-                        
+
                     <!--
                         <div >
                             <p ng-repeat="product in basket.products">{{product.place}}</p>
-                            
+
                         </div>
-                    --> 
-                        
+                    -->
+
                 </section>
             </section>
         </section>
-   
+
     </main>
-    
+
     <!-- Angular JS CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-     
+
      <!-- link til app.js -->
     <script type="text/javascript" src="app.js"></script>
 

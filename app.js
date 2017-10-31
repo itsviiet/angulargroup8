@@ -13,8 +13,9 @@
         product.reviews.push(this.review);
         this.review = {};
       };
+      
     });
-   
+
     var basket = [{
         id: "1",
         place:'Havnepladsen',
@@ -126,7 +127,3 @@
       }]
     }];
 })();
-
-
-    
-
