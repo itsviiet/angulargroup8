@@ -14,12 +14,17 @@
         this.review = {};
           console.log("submit");
       };
+      
     });
+<<<<<<< HEAD
    
     
     
     
     
+=======
+
+>>>>>>> 63f1d3fd5a83935d80bc7cf8b1fc863c99dc48f4
     var basket = [{
         id: "1",
         place:'Havnepladsen',
@@ -131,7 +136,3 @@
       }]
     }];
 })();
-
-
-    
-
