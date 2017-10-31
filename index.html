@@ -14,8 +14,6 @@
 
 <body ng-controller="BasketController as basket">
 
-   <p>HEJ MED DIG</p>
-   
     <main>
 <!-- Navigation start -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -30,10 +28,10 @@
                 <a class="nav-link" href="#heading1">Kort <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#heading2">Anmeld banerne</a>
+                <a class="nav-link" href="#heading2">Se anmeldelser</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#heading3">Se anmeldelser</a>
+                <a class="nav-link" href="#heading3">Anmeld banerne</a>
               </li>
             </ul>
           </div>
@@ -201,25 +199,21 @@
           </div>
         </div>
     </div>
-<<<<<<< HEAD
     </div>
-=======
-<<<<<<< HEAD
 
-    <h1 id="heading3" class="heading">Se anmeldelser</h1>
+    <h1 id="heading2" class="heading">Se anmeldelser</h1>
 
 <li ng-repeat="product in basket.products">
   <blockquote ng-repeat="review in product.reviews">
-    {{review.field}}<br />
-    <b>Stars: {{review.stars}}</b><br />
+      <b>{{review.field}}</b><br />
+    {{review.stars}} Stjerner <br />
     {{review.body}}<br />
-    <cite class="clearfix">-{{review.author}} on {{review.createdOn | date}}</cite>
+    <cite class="clearfix">-{{" " + review.author}} </cite>
   </blockquote>
 </li>
 
-
                         <div>
-                          <h1 id="heading2" class="heading">Anmeld banerne</h1>
+                          <h1 id="heading3" class="heading">Anmeld banerne</h1>
 
                           <form name="reviewForm" role="form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 
